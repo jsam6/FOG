@@ -1,0 +1,394 @@
+{% extends 'main/base.html' %}
+{% block title %}<title>{{facility_name}}</title>{% endblock title %}
+{%  load staticfiles  %}
+{% block body %}
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+            <div id="page-head">
+                
+               <!-- <hr class="new-section-sm bord-no"> -->
+                <div class="text-center">
+                    <h3>{{facility_name}} Status</h3>
+                    
+                </div>
+                <!-- <hr class="new-section-md bord-no"> -->
+            </div>
+
+            
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <canvas id="library-doughnutlibrary" style="height:40vh; width:80vw"></canvas>
+                    </div>
+                </div>
+                
+				
+				    
+				
+				    <hr class="new-section-md bord-no">
+				    <div class="row">
+				        <div class="col-md-10 col-md-offset-1">
+				            <!-- Line Chart -->
+				            <!---------------------------------->
+				            <div class="panel">
+				                <div class="panel-heading">
+				                    <h3 class="panel-title">{{facility_name}}'s <b>15 Nov</b> Status</h3>
+				                </div>
+				                <div class="pad-all">
+				                    <canvas id="library-linelibrary" style="height:40vh; width:80vw"></canvas>
+				                </div>
+				            </div>
+				            <!---------------------------------->
+				
+				            <!-- <div class="row">
+				                <div class="col-md-3">
+				                    <div class="panel panel-warning panel-colorful media middle pad-all">
+				                        <div class="media-left">
+				                            <div class="pad-hor">
+				                                <i class="pli-file-word icon-3x"></i>
+				                            </div>
+				                        </div>
+				                        <div class="media-body">
+				                            <p class="text-2x mar-no text-semibold">241</p>
+				                            <p class="mar-no">Users</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="col-md-3">
+				                    <div class="panel panel-info panel-colorful media middle pad-all">
+				                        <div class="media-left">
+				                            <div class="pad-hor">
+				                                <i class="pli-file-zip icon-3x"></i>
+				                            </div>
+				                        </div>
+				                        <div class="media-body">
+				                            <p class="text-2x mar-no text-semibold">12:00</p>
+				                            <p class="mar-no">AM</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="col-md-3">
+				                    <div class="panel panel-mint panel-colorful media middle pad-all">
+				                        <div class="media-left">
+				                            <div class="pad-hor">
+				                                <i class="pli-camera-2 icon-3x"></i>
+				                            </div>
+				                        </div>
+				                        <div class="media-body">
+				                            <p class="text-2x mar-no text-semibold">241</p>
+				                            <p class="mar-no">Photos</p>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="col-md-3">
+				                    <div class="panel panel-purple panel-colorful media middle pad-all">
+				                        <div class="media-left">
+				                            <div class="pad-hor">
+				                                <i class="pli-video icon-3x"></i>
+				                            </div>
+				                        </div>
+				                        <div class="media-body">
+				                            <p class="text-2x mar-no text-semibold">241</p>
+				                            <p class="mar-no">Videos</p>
+				                        </div>
+				                    </div>
+				                </div>
+				
+				            </div> -->
+				
+				            <!-- <div class="row">
+				                <div class="col-md-6">
+				                    <div class="panel">
+				                        <div class="panel-heading">
+				                            <h3 class="panel-title">Newsfeed</h3>
+				                        </div>
+				                        <div class="nano" style="height:360px">
+				                            <div class="nano-content">
+				                                <div class="panel-body bord-btm">
+				                                    <p class="text-bold text-main text-sm">#68464</p>
+				                                    <p class="pad-btm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, aut! </p>
+				                                    <a href="#" class="task-footer">
+				                                        <span class="box-inline">
+				                                            <label class="label label-warning">Notice</label>
+				                                        </span>
+				                                    </a>
+				                                </div>
+				                                <div class="panel-body bord-btm">
+				                                    <p class="text-bold text-main text-sm">#45684</p>
+				                                    <p class="pad-btm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, dicta.</p>
+                                                    <a href="#" class="task-footer">
+                                                        <span class="box-inline">
+                                                            <label class="label label-info">Info</label>
+                                                        </span>
+                                                    </a>
+				                                </div>
+				                                <div class="panel-body bord-btm">
+				                                     <p class="text-bold text-main text-sm">#84564</p>
+				                                     <p class="pad-btm">No one rejects, dislikes, or avoids pleasure itself, because it is pleasure.</p>
+                                                     <a href="#" class="task-footer">
+                                                        <span class="box-inline">
+                                                            <label class="label label-danger">Warning</label>
+                                                        </span>
+                                                    </a>
+				                                     
+				                                 </div>
+				                                <div class="panel-body bord-btm">
+				                                     <p class="text-bold text-main text-sm">#23255</p>
+				                                     <p class="pad-btm">The new common language will be more simple and regular than the existing European languages.</p>
+				                                     
+				                                 </div>
+				                                <div class="panel-body bord-btm">
+				                                    <p class="text-bold text-main text-sm">#34522</p>
+				                                    <p class="pad-btm">To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it?</p>
+				                                    <a href="#" class="task-footer">
+				                                        <span class="text-sm"><i class="pli-clock icon-fw text-main"></i>9:25</span>
+				                                    </a>
+				                                </div>
+				                                <div class="panel-body bord-btm">
+				                                    <p class="text-bold text-main text-sm">#45684</p>
+				                                    <p class="pad-btm">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+				                                    
+				                                </div>
+				                            </div>
+				                        </div>
+				                        <div class="panel-footer text-right">
+				                            <button class="btn btn-sm btn-Default">Load more</button>
+				                            <button class="btn btn-sm btn-primary">View all</button>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="col-md-6">
+				                    <div class="panel">
+				
+				                        <div class="panel">
+				                            <div class="panel-heading">
+				                                <h3 class="panel-title">Discussion's Room</h3>
+				                            </div>
+				
+				                            <div class="panel-body">
+				                                <div class="table-responsive">
+				                                    <table class="table">
+				                                        <thead>
+				                                            <tr>
+				                                                <th class="text-center">#</th>
+				                                                <th>Room</th>
+				                                                <th>Last Occupied</th>
+				                                                <th>Status</th>
+				                                            </tr>
+				                                        </thead>
+				                                        <tbody>
+				                                            <tr>
+				                                                <td class="text-center">1</td>
+				                                                <td><a href="#" class="btn-link">Room A-1</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-success">Available</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">2</td>
+				                                                <td><a href="#" class="btn-link">Room A-2</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-danger">Occupied</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">3</td>
+				                                                <td><a href="#" class="btn-link">Room A-3</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-warning">Maintenance</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">4</td>
+				                                                <td><a href="#" class="btn-link">Room A-4</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-success">Available</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">5</td>
+				                                                <td><a href="#" class="btn-link">Room A-5</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-success">Available</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">6</td>
+				                                                <td><a href="#" class="btn-link">Room A-6</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-success">Available</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">7</td>
+				                                                <td><a href="#" class="btn-link">Room A-7</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-danger">Occupied</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">8</td>
+				                                                <td><a href="#" class="btn-link">Room A-8</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-danger">occupied</span></td>
+				                                            </tr>
+				                                            <tr>
+				                                                <td class="text-center">9</td>
+				                                                <td><a href="#" class="btn-link">Room A-9</a></td>
+				                                                <td><span class="text-muted">01-01-2018 00:00:00</span></td>
+				                                                <td><span class="label label-warning">Maintenance</span></td>
+				                                            </tr>
+				                                        </tbody>
+				                                    </table>
+				                                </div>
+				                            </div>
+				                        </div>
+				
+				                    </div>
+				                </div>
+				
+				            </div> -->
+				        </div>
+				    </div>
+				
+				
+				
+				    
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+
+    </div>
+
+
+    <script>
+        Chart.pluginService.register({
+            beforeDraw: function (chart) {
+                if (chart.config.options.elements.center) {
+                    //Get ctx from string
+                    var ctx = chart.chart.ctx;
+
+                    //Get options from the center object in options
+                    var centerConfig = chart.config.options.elements.center;
+                    var fontStyle = centerConfig.fontStyle || 'Arial';
+                    var txt = centerConfig.text.split('\n');
+                    var color = centerConfig.color || '#000';
+                    var sidePadding = centerConfig.sidePadding || 20;
+                    var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2)
+                    //Start with a base font of 30px
+                    ctx.font = "15px " + fontStyle;
+
+                    //Get the width of the string and also the width of the element minus 10 to give it 5px side padding
+                    var stringWidth = ctx.measureText(txt).width;
+                    var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
+
+                    // Find out how much the font can grow in width.
+                    var widthRatio = elementWidth / stringWidth;
+                    var newFontSize = Math.floor(30 * widthRatio);
+                    var elementHeight = (chart.innerRadius * 2);
+
+                    // Pick a new font size so it will not be larger than the height of label.
+                    var fontSizeToUse = Math.min(newFontSize, elementHeight);
+                    //Set font settings to draw it correctly.
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
+                    var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
+                    ctx.font = fontSizeToUse+"px " + fontStyle;
+                    ctx.fillStyle = color;
+
+                    //Draw text in center
+                    // ctx.fillText(txt, centerX, centerY);
+                    ctx.fillText(txt[0], centerX, centerY - fontSizeToUse / 2);
+
+                    var fontSizeToUse = Math.min(newFontSize, elementHeight)/2;
+                    ctx.font = fontSizeToUse+"px " + fontStyle;
+                    ctx.fillText(txt[1], centerX, centerY + fontSizeToUse / 2);
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var ctx = document.getElementById("library-linelibrary");
+        var myLineChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                {% for i in fac_overview_line %}
+                {% if i.date == date_today %}
+                "{{i.time}}",
+                {% endif %}
+                {% endfor %}
+                ],
+                datasets: [{
+                    label: 'Occupancy by hours',
+                    data: [
+                    {% for i in fac_overview_line %}
+                    {% if i.date == date_today %}
+                    "{{i.current_occupancy}}",
+                    {% endif %}
+                    {% endfor %}
+                    ],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255,99,132,1)',
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+
+    <script>
+        var ctx = document.getElementById("library-doughnutlibrary");
+        // And for a doughnut chart
+        var myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+        labels: ["Occupancy of {{facility_name}}"],
+        datasets: [{
+            label: '% of occupancy',
+            data: [{{current_occupancy}}, {{empty_occupancy}}],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(0, 0, 0, 0)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(0, 0, 0, 0)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        elements: {
+            center: {
+                text:  {{percentage_occupancy}} + "%" + "\nFull",
+                color: '#36A2EB', //Default black
+                fontStyle: 'Helvetica', //Default Arial
+                sidePadding: 50 //Default 20 (as a percentage)
+            }
+        },
+    }
+        });
+    </script>
+{% endblock body %}
+
+    

@@ -1,0 +1,287 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+
+{% block add_css %}
+<!--Animate.css [ OPTIONAL ]-->
+<!-- <link href="{% static 'main/plugins/animate-css/animate.min.css' %}" rel="stylesheet"> -->
+{% endblock add_css %}
+
+{% block body %}
+
+    <!-- <header id="navbar">
+        <div id="navbar-container" class="boxed">
+
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="{%   static 'main/img/logo.jpg' %}" alt="Nifty Logo" class="brand-icon">
+                    <div class="brand-title">
+                        <span class="brand-text pad-lft">FOG</span>
+                    </div>
+                </a>
+                
+            </div>
+            <div class="navbar-content">
+                
+
+                <ul class="nav navbar-top-links">
+                    <li id="dropdown-user" class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                            <span class="ic-user pull-right">
+                                <button class="btn btn-default btn-rounded"><input type="file" accept="image/*" capture="camera">Scan QR</button>
+                            </span>
+                        </a>
+                        
+                    </li>
+
+                    <li>
+                        <a href="#" class="aside-toggle">
+                            <i class="pli-dot-vertical"></i>
+                        </a>
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+    </header> -->
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+            
+
+            {% for message in messages %}
+                {% if 'transactions_success' in message.extra_tags %}
+                <div class="alert alert-success">
+                    <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                    <strong >Success!</strong> Transaction has been made
+                </div>
+                
+                {% endif %}
+            {% endfor %}
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+                    {% if profile == True %}
+                    <h2 class="text-center">Welcome {{username}}</h2>
+				    <!-- <hr class="new-section-md bord-no"> -->
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            
+                            <!-- QR CODE -->
+                            <!---------------------------------->
+                            <div class="panel">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">{{username}}'s QR</h3>
+                                </div>
+                                <div class="pad-all text-center">
+                                    <!-- <img src="{% static 'main/img/qrcode-img.png' %}"> -->
+                                    <!-- <img src="{% static 'main/img/user-{{userReceiver}}.png' %}"> -->
+                                    {% with 'main/img/qrcodes/10.3.241.161-scan-'|add:userReceiver|add:'.png' as image_static %}
+                                      <img src="{% static image_static %}">
+                                    {% endwith %}
+                                    
+                                    <!-- <img src="{{qr_image}}' %}"> -->
+                                    
+                                </div>
+                            </div>
+                            <!---------------------------------->
+
+                
+                            
+                        </div>
+                    </div>
+                    {% else %}
+                    <h2 class="text-center">{{username}}</h2>
+                    {% endif %}
+
+				    
+                    
+                    {% if profile == True %}
+				    <div class="row">
+                        <div class="col-md-6">
+                            <div class="panel">
+        
+                                <div class="panel">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">Account Balance</h3>
+                                    </div>
+        
+                                    <div class="panel-body">
+                                        <p class="text-center text-normal text-4x">RM {{acc_balance}}</p><br>
+                                        
+                                        <!-- <p class="text-normal">Transaction's History</p>
+                                        
+                                        <button data-target="#default-modal" data-toggle="modal" class="btn btn-primary btn-lg">Launch modal</button> -->
+
+
+
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </div>
+		                <div class="col-md-6">
+		                    <div class="panel">
+		                        <div class="panel-heading">
+		                            <h3 class="panel-title">Overall Facilities' Status</h3>
+		                        </div>
+		                        
+		                        <canvas id="myChart" style="height:60vh; "></canvas>
+
+		                        <div class="panel-footer text-right">
+		                            <button class="btn btn-sm btn-Default">Load more</button>
+		                            <button class="btn btn-sm btn-primary">View all</button>
+		                        </div>
+		                    </div>
+		                </div>
+		                
+		
+		            </div>
+                    {% endif %}
+				
+				
+				    
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+        
+        <!--MAIN NAVIGATION-->
+        <!--===================================================-->
+        <nav id="mainnav-container">
+            <div id="mainnav">
+
+
+                <!--OPTIONAL : ADD YOUR LOGO TO THE NAVIGATION-->
+                <!--It will only appear on small screen devices.-->
+                <!--================================
+                <div class="mainnav-brand">
+                    <a href="index.html" class="brand">
+                        <img src="img/logo.png" alt="Nifty Logo" class="brand-icon">
+                        <span class="brand-text">Nifty</span>
+                    </a>
+                    <a href="#" class="mainnav-toggle"><i class="pci-cross pci-circle icon-lg"></i></a>
+                </div>
+                -->
+
+
+
+                
+
+            </div>
+        </nav>
+        <!--===================================================-->
+        <!--END MAIN NAVIGATION-->
+
+    </div>
+
+    <!--Default Bootstrap Modal-->
+    <!--===================================================-->
+    <!-- <div class="modal fade" id="default-modal" role="dialog" tabindex="-1" aria-labelledby="default-modal" aria-hidden="true"> -->
+    <div class="modal fade" id="default-modal" role="dialog" tabindex="-1" aria-labelledby="default-modal" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!--Modal header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><i class="pci-cross pci-circle"></i></button>
+                    <h4 class="modal-title">Modal Heading</h4>
+                </div>
+
+                <!--Modal body-->
+                <div class="modal-body">
+                    <p class="text-semibold text-main">Bootstrap Modal Vertical Alignment Center</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                    <br>
+                    <p class="text-semibold text-main">Popover in a modal</p>
+                    <p>This
+                        <button class="btn btn-sm btn-warning modal-popover add-popover" data-toggle="popover" data-trigger="focus" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="Popover Title">button</button>
+                        should trigger a popover on click.
+                    </p>
+                    <br>
+                    <p class="text-semibold text-main">Tooltips in a modal</p>
+                    <p>
+                        <a class="btn-link text-bold add-tooltip" href="#" data-original-title="Tooltip">This link</a> and
+                        <a class="btn-link text-bold add-tooltip" href="#" data-original-title="Tooltip">that link</a> should have tooltips on hover.
+                    </p>
+                </div>
+
+                <!--Modal footer-->
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--===================================================-->
+    <!--End Default Bootstrap Modal-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="{% static 'main/js/jquery.min.js' %}"  type="text/javascript"></script>
+
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+    $('#default-modal').modal('show');
+});
+</script>
+ -->
+    <script>
+var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: [
+        {% for i in fac_name_list %}
+        "{{i.facility_name}}",
+        {% endfor %}
+        ],
+        datasets: [{
+            label: '% Occupied',
+            data: [
+            {% for i in fac_overview_list %}
+            "{{i}}",
+            {% endfor %}
+            ],
+            backgroundColor: [
+            //     'rgba(255, 99, 132, 0.2)',
+            {% for i in fac_name_list %}
+                'rgba(75, 192, 192, 0.2)',
+            {% endfor %}
+            //     'rgba(255, 206, 86, 0.2)',
+            //     'rgba(75, 192, 192, 0.2)',
+            //     'rgba(153, 102, 255, 0.2)',
+            //     'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+            {% for i in fac_name_list %}
+                'rgba(75, 192, 192, 1)',
+            {% endfor %}
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
+
+{% endblock body %}

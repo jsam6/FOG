@@ -1,0 +1,130 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block title %}<title>Login</title>{% endblock title%}
+
+{% block nav_fac %}
+{% endblock nav_fac %}
+
+
+{% block body %}
+
+
+
+
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+            
+
+            
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+            	{% for message in messages %}
+                    {% if 'login_username_invalid' in message.extra_tags %}
+                    <div class="alert alert-danger">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Fail!</strong> Invalid Username
+                    </div>
+                    {% elif 'login_pwd_invalid' in message.extra_tags %}
+                    <div class="alert alert-danger">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Failed!</strong> Invalid Password
+                    </div>
+                    {% endif %}
+                {% endfor %}
+
+				<div class="row pad-all">
+					<div class="col-lg-3"></div>
+					<div class="col-lg-6 col-sm-12">
+				        <div class="panel">
+				            <div class="panel-heading">
+				                <h3 class="panel-title">Login</h3>
+				            </div>
+
+				            <div class="panel-body">
+                    			<div class="text-center">
+                    				<form method="POST">
+									    <input type="text" name="username" value="" placeholder="Username ..."><p />
+									    <div></div>
+									    <input type="password" name="password" value="" placeholder="Password ..."><p />
+									    <div>
+									    	
+									    </div>
+									    <button class="btn btn-primary" id="date_btn" name="login" type="submit">Login</button>
+									    
+									</form>
+                    			</div>
+                    			
+                    		</div>
+
+                    		
+				
+				            <!--Horizontal Form-->
+				            <!--===================================================-->
+				            <!-- <form class="form-horizontal" method="POST" >
+				                <div class="panel-body">
+				                    <div class="form-group">
+				                        <label class="col-sm-3 control-label" for="demo-hor-inputemail">Email</label>
+				                        <div class="col-sm-9">
+				                            <input type="text" name="username" value="" placeholder="Username ..." class="form-control">
+				                        </div>
+				                    </div>
+				                    <div class="form-group">
+				                        <label class="col-sm-3 control-label" for="demo-hor-inputpass">Password</label>
+				                        <div class="col-sm-9">
+				                            <input type="password" name="password" value="" placeholder="Password ..."  class="form-control">
+				                        </div>
+				                    </div>
+				                    <div class="form-group">
+				                        <div class="col-sm-offset-3 col-sm-9">
+				                            <input id="demo-remember-me-2" class="magic-checkbox" type="checkbox">
+				                            <label for="demo-remember-me-2">Remember me</label>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div class="panel-footer text-right">
+				                    <button class="btn btn-success" type="submit">Sign in</button>
+				                </div>
+				            </form> -->
+				            <!--===================================================-->
+				            <!--End Horizontal Form-->
+
+				            <!-- <form method="POST">
+							    <input type="text" name="username" value="" placeholder="Username ..." class="form-control"><p />
+							    <div></div>
+							    <input type="password" name="password" value="" placeholder="Password ..."  class="form-control"><p />
+							    <div>
+							    	
+							    </div>
+							    <button class="btn btn-primary" id="date_btn" name="login" type="submit">Login</button>
+							    
+							</form> -->
+				
+				        </div>
+				    </div>
+				    <div class="col-lg-3"></div>
+				</div>
+				    
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+{% endblock body %}

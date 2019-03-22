@@ -1,0 +1,861 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"new",
+				"new_user"
+			],
+			[
+				"random",
+				"random_int"
+			],
+			[
+				"fac_ver",
+				"fac_overview"
+			],
+			[
+				"librar",
+				"library-linelibrary"
+			],
+			[
+				"invalid",
+				"invalid_user"
+			],
+			[
+				"facility_",
+				"facility_name"
+			],
+			[
+				"facility",
+				"facility_id"
+			],
+			[
+				"fac",
+				"fac_remove"
+			],
+			[
+				"facili",
+				"facility_id"
+			],
+			[
+				"show",
+				"show_modal"
+			],
+			[
+				"count_",
+				"count_update"
+			],
+			[
+				"comp",
+				"company"
+			],
+			[
+				"INS",
+				"INSERT_TRANSFER"
+			],
+			[
+				"I",
+				"INTO"
+			],
+			[
+				"insert",
+				"insert_transfer"
+			],
+			[
+				"chec",
+				"CHECK_TRANSFER_EXIST"
+			],
+			[
+				"transfer",
+				"transfer_script"
+			],
+			[
+				"jobtec",
+				"jobtech_transfer_log"
+			],
+			[
+				"trans",
+				"transfer_date"
+			],
+			[
+				"cursor_data",
+				"cursor_data_mng"
+			],
+			[
+				"re",
+				"result"
+			],
+			[
+				"tran",
+				"transfer_date"
+			],
+			[
+				"transf",
+				"transfer_script"
+			],
+			[
+				"INSERT",
+				"INSERT_SQL"
+			],
+			[
+				"curso",
+				"cursor_pd"
+			],
+			[
+				"prod",
+				"production_local_db_connection"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "main/templates/main/base.html",
+			"settings":
+			{
+				"buffer_size": 18810,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/login.html",
+			"settings":
+			{
+				"buffer_size": 4774,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/facility.html",
+			"settings":
+			{
+				"buffer_size": 20239,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/views.py",
+			"settings":
+			{
+				"buffer_size": 22166,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/index.html",
+			"settings":
+			{
+				"buffer_size": 11110,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/admin.html",
+			"settings":
+			{
+				"buffer_size": 35153,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/transactions.html",
+			"settings":
+			{
+				"buffer_size": 5036,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/models.py",
+			"settings":
+			{
+				"buffer_size": 3642,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/account.html",
+			"settings":
+			{
+				"buffer_size": 155,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main/templates/main/user.html",
+			"settings":
+			{
+				"buffer_size": 0,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "fac_default.py",
+			"settings":
+			{
+				"buffer_size": 3466,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/B/Workspace/fog",
+		"/B/Workspace/fog/fog",
+		"/B/Workspace/fog/main",
+		"/B/Workspace/fog/main/templates",
+		"/B/Workspace/fog/main/templates/main"
+	],
+	"file_history":
+	[
+		"/B/Workspace/fog/fog/settings.py",
+		"/B/Workspace/fog/main/urls.py",
+		"/B/Workspace/fog/main/views.py",
+		"/B/Workspace/fog/main/static/main/dwa012-html5-qrcode-8f98e26/README.md",
+		"/B/Workspace/fog/fac_default.py",
+		"/B/Workspace/fog/fog/urls.py",
+		"/B/Workspace/fog/main/static/main/js/demo/ui-modals.js",
+		"/B/Workspace/fog/main/static/main/plugins/bootbox/bootbox.js",
+		"/B/Workspace/fog/main/static/main/plugins/animate-css/animate.css",
+		"/B/Workspace/fog/main/models.py",
+		"/B/Workspace/fog/main/templates/main/admin.html",
+		"/B/Workspace/django/website/cheese/models.py",
+		"/B/Workspace/python Django/mysite/webapp/models.py",
+		"/B/Workspace/python Django/mysite/personal/models.py",
+		"/B/Workspace/python Django/mysite/blog/models.py",
+		"/B/Workspace/McFlurry/Enoquix/companies/E-FinancialCareer/18-09-2018/counts_1000_page100.json",
+		"/B/Workspace/fog/main/admin.html",
+		"/B/Workspace/fog/main/static/main/css/demo/nifty-icons.css",
+		"/B/Workspace/fog/main/static/main/premium/icon-sets/icons/line-icons/premium-line-icons.css",
+		"/B/Workspace/fog/main/static/main/css/demo/nifty-demo-icons.min.css",
+		"/B/Workspace/fog/main/static/main/plugins/morris-js/raphael-js/raphael.min.js",
+		"/B/Workspace/fog/main/static/main/plugins/morris-js/morris.min.js",
+		"/B/Workspace/fog/main/static/main/js/demo/nifty-demo.min.js",
+		"/B/Workspace/fog/main/static/main/js/demo/nifty-demo.js",
+		"/B/Workspace/fog/main/static/main/js/nifty.min.js",
+		"/B/Workspace/fog/main/static/main/js/bootstrap.min.js",
+		"/B/Workspace/fog/main/static/main/js/jquery.min.js",
+		"/B/Workspace/fog/main/static/main/plugins/morris-js/morris.min.css",
+		"/B/Workspace/fog/main/static/main/css/themes/type-d/theme-navy.min.css",
+		"/B/Workspace/fog/main/static/main/plugins/pace/pace.min.js",
+		"/B/Workspace/fog/main/static/main/plugins/pace/pace.min.css",
+		"/B/Workspace/fog/main/static/main/css/demo/nifty-demo-icons.css",
+		"/B/Workspace/fog/main/static/main/css/nifty.css",
+		"/B/Workspace/fog/main/static/main/css/bootstrap.css",
+		"/B/Workspace/fog/main/templates/main/urls.py",
+		"/B/Workspace/fog/main/apps.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-indon-jobs-transfer/bankcentralasia_id.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-indon-jobs-transfer/constants.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-indon-jobs-transfer/adaro_id.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-indon-jobs-transfer/classes/__init__.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/seagate_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/lenovo_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/koeitecmo_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/grab_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/google_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/facebook_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/vmware_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/corning_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/amadeus_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/adobe_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/ubisoft_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/constant.py",
+		"/B/Workspace/McFlurry/Enoquix/ori_server/facebook_sg.py",
+		"/B/Workspace/McFlurry/Enoquix/ori_server/transfer_sql.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/db.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/swiss.py",
+		"/B/Workspace/McFlurry/Enoquix/ori_server/project/views_2.py",
+		"/B/Workspace/McFlurry/Enoquix/ori_server/nohup.out",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/e-financial.py",
+		"/B/Workspace/Adobe After Effects CS6 11.0.0.378 LS7 Multilanguage [ChingLiu]/ChingLiu.Notes.nfo",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/monitoring_transfer_default.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-jobs-transfer/example_test.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-crawler-monitoring/monitoring_crawler_hourly.py",
+		"/B/Workspace/McFlurry/Enoquix/ori_server/monitoring_2.py",
+		"/B/Workspace/McFlurry/Enoquix/ori_server/countries_to_code.json",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-crawler-monitoring/transfer-historical-crawler.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-crawler-monitoring/transfer-historical-crawler.txt",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-scrappers/scrapper_karirpad.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-scrappers/scrapper_grab.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-scrappers/scrapper_facebook.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-scrappers/scrapper_monster.py",
+		"/B/Workspace/McFlurry/Enoquix/db.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-crawler-monitoring/db.py",
+		"/B/Workspace/McFlurry/Enoquix/jobtech-scrappers/scrapper_mystarjob.py",
+		"/B/Workspace/django/website/music/urls.py",
+		"/B/Workspace/django/website/music/admin.py",
+		"/B/Workspace/django/website/music/views.py",
+		"/B/Workspace/django/website/music/models.py"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"transaction",
+			"new_user_add = Users(id_users=5, username=\"asd\", password=\"asdsdd\", email=\"dasfsd\", qr_code=\"asdasdcxv\")\n                new_user_add.save()",
+			"tabs-bo",
+			"facility",
+			"fog",
+			"FOG",
+			"main-librar",
+			"fac_overview_list",
+			"fac_name_list",
+			"library-line",
+			"filter",
+			"main-li",
+			"main-libr",
+			"userScanner",
+			"$",
+			"if date_today == i.date:",
+			"facilities",
+			"facChart",
+			"input",
+			"demo-",
+			"default-modal",
+			"demo",
+			"\">\n",
+			"userId",
+			"index",
+			"title",
+			"url",
+			"library-linelibrary",
+			"myChart",
+			"asd-tab-1",
+			"pli-dot-",
+			"pli-dot-vertical",
+			"demo-",
+			"img",
+			"demo",
+			"demo-",
+			"demo",
+			"demo-",
+			"demo",
+			"demo-",
+			"custom scri",
+			"demo-nifty-settings",
+			"psi-gear",
+			"demo-psi-gear",
+			"mainnav-menu-wra",
+			"tgl-menu",
+			"mega-dropdown",
+			"mega-dropdown open"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "main/templates/main/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 18810,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15051,
+								15051
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 4202.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main/templates/main/login.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4774,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930,
+								930
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1352.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main/templates/main/facility.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 20239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								511,
+								511
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 127.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "main/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22166,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11100,
+								11100
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4230.4,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "main/templates/main/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11110,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2514,
+								2514
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 945.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "main/templates/main/admin.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 35153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1813,
+								3593
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 487.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "main/templates/main/transactions.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5036,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1761,
+								1309
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "main/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1927,
+								1836
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 220.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "main/templates/main/account.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 155,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								132,
+								132
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "main/templates/main/user.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "fac_default.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3466,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1214,
+								1214
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 446.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 147.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "fog.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 508.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 382.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 207.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

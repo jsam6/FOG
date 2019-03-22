@@ -1,0 +1,629 @@
+{% extends 'main/base.html' %}
+{% block title %}<title>Admin</title>{% endblock title %}
+{%  load staticfiles  %}
+
+{% block add_css %}
+<!--Bootstrap Table [ OPTIONAL ]-->
+<link href="{% static 'main/plugins/bootstrap-table/bootstrap-table.min.css' %}" rel="stylesheet">
+
+
+<!--Font Awesome [ OPTIONAL ]-->
+<link href="{% static 'main/plugins/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+
+<!--X-editable [ OPTIONAL ]-->
+<link href="{% static 'main/plugins/x-editable/css/bootstrap-editable.css' %}" rel="stylesheet">
+{% endblock add_css %}
+
+{% block body %}
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+            <div id="page-head">
+                
+				<hr class="new-section-sm bord-no">
+				<div class="text-center">
+				    <h3>Admin</h3>
+				</div>
+            </div>
+
+            
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+                                
+                <!-- {% if already_exist %}                  
+                <div class="alert alert-danger">
+                    <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                    <strong>Oh snap!</strong> Facility ID already exist
+                </div>
+                {% endif %}
+                {% if invalid_input %}                  
+                <div class="alert alert-danger">
+                    <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                    <strong>Oh snap!</strong> Please enter valid integer ID and Capacity
+                </div>
+                {% endif %} -->
+                {% for message in messages %}
+                    {% if 'fac_add' in message.extra_tags %}
+                    <div class="alert alert-success">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Success!</strong> Facility has been added
+                    </div>
+                    {% elif 'fac_exist' in message.extra_tags %}
+                    <div class="alert alert-danger">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Failed!</strong> Facility ID has already exist
+                    </div>
+                    {% elif 'fac_invalid' in message.extra_tags %}
+                    <div class="alert alert-danger">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Failed!</strong> Invalid Input
+                    </div>
+                    {% elif 'fac_remove' in message.extra_tags %}
+                    <div class="alert alert-success">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Success!</strong> Facility has been removed from Database
+                    </div>
+                    {% elif 'fac_remove_fail' in message.extra_tags %}
+                    <div class="alert alert-danger">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Failed!</strong> to remove facility from database
+                    </div>
+                    {% endif %}
+                {% endfor %}
+                
+			    <div class="row">
+			        <div class="col-md-10 col-md-offset-1">
+			            <!--Panel with Tabs-->
+				        <!--===================================================-->
+				        <div class="panel panel-primary">
+				
+				            <!--Panel heading-->
+				            <div class="panel-heading">
+				                <div class="panel-control">
+				
+				                    <!--Nav tabs-->
+				                    <ul class="nav nav-tabs">
+				                        <li class="active"><a data-toggle="tab" href="#tabs-box-1">Facilities</a></li>
+				                        <li><a data-toggle="tab" href="#tabs-box-2">Add Facilities</a></li>
+                                        <li><a data-toggle="tab" href="#tabs-box-3">Remove Facilities</a></li>
+                                        <li><a data-toggle="tab" href="#tabs-box-4">Facilities Overview</a></li>
+				                    </ul>
+				
+				                </div>
+				                <h3 class="panel-title">Facility Overview</h3>
+				            </div>
+				
+				            <!--Panel body-->
+				            <div class="panel-body">
+				
+				                <!--Tabs content-->
+				                <div class="tab-content">
+				                    <div id="tabs-box-1" class="tab-pane fade in active">
+                                        <div class="panel-body">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Facility ID</th>
+                                                            <th>Facility Name</th>
+                                                            <th>Current Occupancy</th>
+                                                            <th>Total Occupancy</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        {% for i in fac %}
+                                                        <tr>
+                                                            <td>{{i.facility_id}}</td>
+                                                            <td>{{i.facility_name}}</td>
+                                                            <td>{{i.current_occupancy}}</td>
+                                                            <td>{{i.total_occupancy}}</td>
+                                                        </tr>
+                                                        {% endfor %}                                       
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+				                    </div>
+
+				                    <div id="tabs-box-2" class="tab-pane fade">
+				                        <p class="text-main text-lg mar-no">Add Facility</p>
+                                        
+                                        <!--Horizontal Form-->
+                                        <!--===================================================-->
+                                        <form class="form-horizontal" method="POST" >
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Facility ID</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="fac_id">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Facility Name</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="fac_name">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Total Capacity</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="fac_cap">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <button class="btn btn-success pull-right" type="submit">Add Facility</button>
+                                            
+                                        </form>
+                                        <!--===================================================-->
+                                        <!--End Horizontal Form-->
+				                    </div>
+
+                                    <div id="tabs-box-3" class="tab-pane fade">
+                                        <div class="panel-body">
+                                            <form  method="POST" >
+                                                <table id="custom-toolbar" class="add-niftycheck"
+                                                    data-toggle="table"
+                                                    data-search="false"
+                                                    data-show-refresh="false"
+                                                    data-show-toggle="false"
+                                                    data-show-columns="false"
+                                                    data-sort-name="id"
+                                                    data-page-list="[5, 10, 20]"
+                                                    data-page-size="5"
+                                                    data-pagination="false" data-show-pagination-switch="false">
+                                                    <thead>
+                                                        <tr>
+                                                            <th></th>
+                                                            <th data-sortable="true">Facility ID</th>
+                                                            <th data-sortable="true">Facility Name</th>
+                                                            <th data-sortable="true">Current Occupancy</th>
+                                                            <th  data-sortable="true">Total Occupancy</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for i in fac %}
+                                                        <tr>
+                                                            <td><button class="btn btn-danger" name="delete_fac" type="submit" value="{{i.facility_id}}"><i class="pli-cross"></i> Remove</button></td>
+                                                            <td>{{i.facility_id}}</td>
+                                                            <td name="facilityName_selected">{{i.facility_name}}</td>
+                                                            <td>{{i.current_occupancy}}</td>
+                                                            <td>{{i.total_occupancy}}</td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                                </table>
+                                            </form> 
+                                        </div>
+
+                                    </div>
+
+                                    <div id="tabs-box-4" class="tab-pane fade">
+                                        <div class="panel-body">
+
+                                            <!--Carousel-->
+                                            <!--===================================================-->
+                                            <div id="carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+                                
+                                                <!--Indicators-->
+                                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                <ol class="carousel-indicators out">
+                                                    {% for i in fac %}
+
+                                                    {% if forloop.first %}
+                                                        <li class="active" data-slide-to="{{i.facility_id}}" data-target="#carousel"></li>
+                                                    {% else %}
+                                                        <li data-slide-to="{{i.facility_id}}" data-target="#carousel"></li>
+                                                    {% endif %}
+                                                    
+                                                    {% endfor %}
+                                                    <!-- <li class="active" data-slide-to="1" data-target="#carousel"></li> -->
+                                                    <!-- <li data-slide-to="2" data-target="#carousel"></li> -->
+                                                </ol>
+                                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                
+                                                <div class="carousel-inner text-center">
+                                                    {% for i in fac %}
+                                                    {% if forloop.first %}
+                                                    <div class="item active">
+                                                        <h4 class="text-main">{{i.facility_name}}</h4>
+                                                        <canvas id="facChart-{{i.facility_id}}" style="height:60vh; "></canvas>
+                                                    </div>
+                                                    {% else %}
+                                                    <div class="item">
+                                                        <h4 class="text-main">{{i.facility_name}}</h4>
+                                                        <canvas id="facChart-{{i.facility_id}}" style="height:60vh; "></canvas>
+                                                    </div>
+                                                    {% endif %}
+                                                    {% endfor %}
+                                
+                                                    <!--Item 2-->
+                                                    <!-- <div class="item active">
+                                                        <h4 class="text-main">Second slide label</h4>
+                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                                    </div> -->
+                                
+                                                </div>
+                                
+                                                <!--carousel-control-->
+                                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                                <a class="carousel-control left" data-slide="prev" href="#carousel"><i class="pli-arrow-left icon-2x"></i></a>
+                                                <a class="carousel-control right" data-slide="next" href="#carousel"><i class="pli-arrow-right icon-2x"></i></a>
+                                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                
+                                            </div>
+                                            <!--===================================================-->
+                                            <!--End Carousel-->
+
+                                            
+                                        </div>
+
+                                    </div>
+				                </div>
+				            </div>
+
+
+
+				        </div>
+				        <!--===================================================-->
+				        <!--End of panel with tabs-->
+                       
+                        <!-- {% if messages %}
+                        <div class="alert alert-success">
+                            <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                            {% for message in messages %}
+                            <strong {% if message.success %} class='{{ message.success }}'{% endif %}>Success!</strong>Fund has been added!
+                            <strong {% if message.info %} class='{{ message.info }}'{% endif %}>FAILED!</strong>INVALID
+                            {% endfor %}
+                            
+                        </div>
+                        {% endif %} -->
+                        
+                        {% for message in messages %}
+                            {% if 'fund_success' in message.extra_tags %}
+                            <div class="alert alert-success">
+                                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                                <strong >Success!</strong> Amount has been added
+                            </div>
+                            {% elif 'fund_fail' in message.extra_tags %}
+                            <div class="alert alert-danger">
+                                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                                <strong >Failed!</strong> Invalid Input/ID
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                
+                        <div class="panel panel-primary">
+                
+                            <!--Panel heading-->
+                            <div class="panel-heading">
+                                <div class="panel-control">
+                
+                                    <!--Nav tabs-->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#tabs-box-5">Add Fund</a></li>
+                                        <!-- <li><a data-toggle="tab" href="#tabs-box-2">Transactions</a></li> -->
+                                    </ul>
+                
+                                </div>
+                                <h3 class="panel-title">Fund</h3>
+                            </div>
+                            
+                            <!--Panel body-->
+                            <div class="panel-body">
+                
+                                <!--Tabs content-->
+                                <div class="tab-content">
+                                    <div id="tabs-box-5" class="tab-pane fade in active">
+                                        <p class="text-main text-lg mar-no">Add Fund to Account</p>
+                                        <!--Horizontal Form-->
+                                        <!--===================================================-->
+                                        <form class="form-horizontal" method="POST" >
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Student ID</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="fund_acc">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Amount</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="fund_amount">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <button class="btn btn-success pull-right" type="submit-fund">Add Fund</button>
+                                            
+                                        </form>
+                                        <!--===================================================-->
+                                        <!--End Horizontal Form-->
+
+                                    </div>
+                                    <!-- <div id="tabs-box-5" class="tab-pane fade">
+                                        
+                                    </div> -->
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+
+                        {% for message in messages %}
+                            {% if 'new_user_success' in message.extra_tags %}
+                            <div class="alert alert-success">
+                                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                                <strong >Success!</strong> New User has been added into Database
+                            </div>
+                            {% elif 'new_user_fail' in message.extra_tags %}
+                            <div class="alert alert-danger">
+                                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                                <strong >Failed!</strong> Invalid Input/ID
+                            </div>
+                            {% elif 'del_user_success' in message.extra_tags %}
+                            <div class="alert alert-success">
+                                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                                <strong >Success!</strong> User has been removed from database
+                            </div>
+                            {% elif 'del_user_fail' in message.extra_tags %}
+                            <div class="alert alert-danger">
+                                <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                                <strong >Failed!</strong> 
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+
+
+                        <div class="panel panel-primary">
+                
+                            <!--Panel heading-->
+                            <div class="panel-heading">
+                                <div class="panel-control">
+                
+                                    <!--Nav tabs-->
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#tabs-box-6">Users</a></li>
+                                        <li><a data-toggle="tab" href="#tabs-box-7">Add Users</a></li>
+                                        <li><a data-toggle="tab" href="#tabs-box-8">Remove Users</a></li>
+                                    </ul>
+                
+                                </div>
+                                <h3 class="panel-title">Users</h3>
+                            </div>
+                
+                            <!--Panel body-->
+                            <div class="panel-body">
+                
+                                <!--Tabs content-->
+                                <div class="tab-content">
+                                    <div id="tabs-box-6" class="tab-pane fade in active">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>User ID</th>
+                                                        <th>Username</th>
+                                                        <th>Email</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for i in users %}
+                                                    <tr>
+                                                        <td>{{i.id_users}}</td>
+                                                        <td>{{i.username}}</td>
+                                                        <td>{{i.email}}</td>
+                                                    </tr>
+                                                    {% endfor %}                                       
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </div>
+
+                                    <div id="tabs-box-7" class="tab-pane fade">
+                                        <p class="text-main text-lg mar-no">Add Users to Database</p>
+                                        <!--Horizontal Form-->
+                                        <!--===================================================-->
+                                        <form class="form-horizontal" method="POST" >
+                                            <div class="panel-body">
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Users ID</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="new_acc">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Username</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="new_username">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Password</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="new_password">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >Email</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="new_email">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label class="col-sm-3 control-label" >QR code</label>
+                                                    <div class="col-sm-9">
+                                                        <input type="text" placeholder=""  class="form-control" name="new_qrcode">
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            <button class="btn btn-success pull-right" type="submit-fund">Add User</button>
+                                            
+                                        </form>
+                                        <!--===================================================-->
+                                        <!--End Horizontal Form-->
+                                    </div>
+
+                                    <div id="tabs-box-8" class="tab-pane fade">
+                                        <form  method="POST" >
+                                            <table id="custom-toolbar" class="add-niftycheck"
+                                                data-toggle="table"
+                                                data-search="false"
+                                                data-show-refresh="false"
+                                                data-show-toggle="false"
+                                                data-show-columns="false"
+                                                data-sort-name="id"
+                                                data-page-list="[5, 10, 20]"
+                                                data-page-size="5"
+                                                data-pagination="false" data-show-pagination-switch="false">
+                                                <thead>
+                                                    <tr>
+                                                        <th></th>
+                                                        <th data-sortable="true">Users ID</th>
+                                                        <th data-sortable="true">Username</th>
+                                                        <th data-sortable="true">email</th>
+                                                        <th  data-sortable="true">Total Occupancy</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                {% for i in users %}
+                                                    <tr>
+                                                        <td><button class="btn btn-danger" name="delete_user" type="submit" value="{{i.id_users}}"><i class="pli-cross"></i> Remove</button></td>
+                                                        <td>{{i.id_users}}</td>
+                                                        <td>{{i.username}}</td>
+                                                        <td>{{i.email}}</td>
+                                                    </tr>
+                                                {% endfor %}
+                                            </tbody>
+                                            </table>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+
+			
+			            
+			            
+			        </div>
+			    </div>
+				
+				
+				
+				    
+            </div>
+            <!--===================================================-->
+            <!--End page content-->
+
+        </div>
+        <!--===================================================-->
+        <!--END CONTENT CONTAINER-->
+
+
+    
+    </div>
+
+
+{% block add_js %}
+<!--Bootstrap Table Sample [ SAMPLE ]-->
+<script src="{% static 'main/js/demo/tables-bs-table.js' %}"></script>
+
+
+<!--X-editable [ OPTIONAL ]-->
+<script src="{% static 'main/plugins/x-editable/js/bootstrap-editable.min.js' %}"></script>
+
+
+<!--Bootstrap Table [ OPTIONAL ]-->
+<script src="{% static 'main/plugins/bootstrap-table/bootstrap-table.min.js' %}"></script>
+
+
+<!--Bootstrap Table Extension [ OPTIONAL ]-->
+<script src="{% static 'main/plugins/bootstrap-table/extensions/editable/bootstrap-table-editable.js' %}s"></script>
+{% endblock add_js %}
+
+{% for i in fac %}
+<script type="text/javascript">
+
+    var ctx{{i.facility_id}} = document.getElementById("facChart-{{i.facility_id}}");
+    var myLineChart = new Chart(ctx{{i.facility_id}}, {
+        type: "line",
+        data: {
+            labels: [
+            {% for x in fac_overview %}
+
+            {% if x.facility_id == i.facility_id %}
+            "{{x.date}} + {{x.time}}",
+            {% endif %}
+
+            {% endfor %}
+            ],
+            datasets: [{
+                label: "{{i.facility_name}}",
+                data: [
+                {% for x in fac_overview %}
+
+                {% if x.facility_id == i.facility_id %}
+                "{{x.current_occupancy}}",
+                {% endif %}
+
+                {% endfor %}
+                ],
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                lineTension: 0.1
+            }]
+        },
+        options: {}
+    });
+</script>
+{% endfor %}
+
+<!-- <script type="text/javascript">
+
+    var ctx{{i.facility_id}} = document.getElementById("facChart-{{i.facility_id}}");
+    var myLineChart = new Chart(ctx{{i.facility_id}}, {
+        type: "line",
+        data: {
+            labels: [
+            {% for x in date_list %}
+            "{{x}}",
+            {% endfor %}
+            ],
+            datasets: [{
+                label: "{{i.facility_name}}",
+                data: [
+                {% for x in c_occ_list %}
+                "{{x.current_occupancy__max}}",
+                {% endfor %}
+                ],
+                fill: false,
+                borderColor: "rgb(75, 192, 192)",
+                lineTension: 0.1
+            }]
+        },
+        options: {}
+    });
+</script> -->
+
+
+{% endblock body %}

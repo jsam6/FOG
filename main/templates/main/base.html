@@ -1,0 +1,431 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% block title %}<title>Facilities-on-the-Go</title>{% endblock title%}
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+    <!--Open Sans Font [ OPTIONAL ]-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'main/css/bootstrap.css' %}" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="{% static 'main/css/nifty.css' %}" rel="stylesheet">
+
+
+    <!--Nifty Premium Icon [ DEMONSTRATION ]-->
+    <!-- <link href="{% static 'main/css/demo/nifty-icons.css' %} " rel="stylesheet"> -->
+
+    <link href="{% static 'main/premium/icon-sets/icons/line-icons/premium-line-icons.css' %}" rel="stylesheet">
+    <!--=================================================-->
+
+
+
+    <!--Pace - Page Load Progress Par [OPTIONAL]-->
+    <link href="{% static 'main/plugins/pace/pace.min.css' %}" rel="stylesheet">
+    <script src="{% static 'main/plugins/pace/pace.min.js' %}"></script>
+
+
+    <!--Demo [ DEMONSTRATION ]-->
+    <link href="{% static 'main/css/demo/nifty-demo.min.css' %}" rel="stylesheet">
+        
+    <!--Morris.js [ OPTIONAL ]-->
+    <link href="{% static 'main/css/themes/type-d/theme-navy.min.css' %}" rel="stylesheet">
+    <!--Morris.js [ OPTIONAL ]-->
+    <link href="{% static 'main/plugins/morris-js/morris.min.css' %}" rel="stylesheet">
+
+    <!-- ChartJS -->
+    <script src="{% static 'main/chartjs/dist/Chart.bundle.js' %}"></script>
+    
+    <!--NiftyJS [ RECOMMENDED ]-->
+    <!-- <script src="{% static 'main/html5-qrcode-master/html5_qrcode.min.js' %}"></script> -->
+    <!-- <script type="text/javascript" src="{% static 'main/js/JsQRScanner-master/war/js/jsqrscanner.nocache.js' %}"></script> -->
+
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/grid.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/version.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/detector.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/formatinf.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/errorlevel.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/bitmat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/datablock.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/bmparser.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/datamask.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/rsdecoder.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/gf256poly.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/gf256.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/decoder.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/qrcode.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/findpat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/alignpat.js' %}"></script>
+    <script type="text/javascript" src="{% static 'main/js/jsqrcode-master/src/databr.js' %}"></script>
+
+    {% block add_css %}
+    {% endblock add_css %}
+    
+
+</head>
+
+<body>
+    <!-- Start of Container -->
+    <div id="container" class="effect aside-float aside-bright mainnav-out slide">
+
+        <header id="navbar">
+            {% block nav_fac %}
+            <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    
+                    <a href="{% url 'main-index' userReceiver=user_id %}" class="navbar-brand">
+                        <img src="{%   static 'main/img/logo.jpg' %}" alt="Nifty Logo" class="brand-icon">
+                        <div class="brand-title">
+                            <span class="brand-text pad-lft">FOG</span>
+                        </div>
+                    </a>
+                    
+                        
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content">
+
+                    <ul class="nav navbar-top-links">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li >
+                            <!-- <a href="https://webqr.com/"> -->
+                            <a>
+                                <!-- <button class="btn btn-default btn-rounded"> Scan QR
+                                    <form >
+                                        <input type="file" accept="image/*;capture=camera" id="input">
+                                        <input type='file' onchange="readURL(this);" />
+                                        <img id="blah" src="#" alt="your image" />
+                                    </form>
+                                </button> -->
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+                        <!-- <script type="text/javascript">
+                            function readURL(input) {
+                              if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+                                reader.onload = function (e) {
+                                  $('#blah')
+                                    .attr('src', e.target.result)
+                                    .width(150)
+                                    .height(200);
+                                };
+                                reader.readAsDataURL(input.files[0]);
+                                $.ajax({
+                                    type: 'POST',
+                                    url:'http://192.168.1.253:8000/testScan/',
+                                    data:{
+                                            file : input.files[0]
+                                    },
+                                    success: function (result){
+                                        alert(result);
+                                        // result = result                                    
+                                    }
+                                })
+                              }
+                              // alert(input.files[0])
+                              
+                            }
+                            
+
+                            // $(document).ready(function() {
+                            //     $("#file-input").click(function(e) { e.preventDefault()
+                            //         $.ajax({
+                            //             type: 'POST',
+                            //             url:'http://192.168.1.253:8000/',
+                            //             data:{
+                            //                     fileList : fileList,
+                                                
+                            //                 // csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+                            //             },
+                            //             success: function (result){
+                            //                 alert(result);
+                            //                 // result = result
+                                            
+                            //             }
+                            //         })
+                            //     });
+                            // });
+                        </script> -->
+
+
+                        
+
+                    </ul>
+                
+                    <ul class="nav navbar-top-links">
+
+                        <!--Notification dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-expanded="true">
+                                <i class="pli-library"></i>
+                                <!-- <span class="badge badge-header badge-danger"></span> -->
+                            </a>
+
+
+                            <!--Notification dropdown menu-->
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right" style="opacity: 1;">
+                                <div class="nano scrollable has-scrollbar" style="height: 265px;">
+                                    <div class="nano-content" tabindex="0" style="right: -17px;">
+                                        <ul class="head-list">
+
+                                            {% for i in fac_name_list %}
+                                            <li>
+                                                <a href="{% url 'main-facility' i.facility_id %}" >
+                                                    <div class="media-left pos-rel">
+                                                        <i class="badge badge-success badge-stat badge-icon pull-left"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-main">{{i.facility_name}}</p>
+                                                        <small class="text-muteds">Available</small>
+                                                    </div>
+                                                </a>
+                                                
+                                            </li>
+                                            {% endfor %}
+                                            
+                                            <!-- <li>
+                                                <a class="media" href="#">
+                                                    <div class="media-left">
+                                                        <i class="pli-add-user-star icon-2x"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="mar-no text-nowrap text-main text-semibold">New User Registered</p>
+                                                        <small>4 minutes ago</small>
+                                                    </div>
+                                                </a>
+                                            </li> -->
+                                            
+                                        </ul>
+                                    </div>
+
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End notifications dropdown-->
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="ic-user pull-right">
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <!--You can use an image instead of an icon.-->
+                                    <!--<img class="img-circle img-user media-object" src="img/profile-photos/1.png" alt="Profile Picture">-->
+                                    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                    <i class="pli-male"></i>
+                                </span>
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                                <!--You can also display a user name in the navbar.-->
+                                <!--<div class="username hidden-xs">Aaron Chavez</div>-->
+                                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                            </a>
+
+
+                            
+                            <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="{% url 'main-index' user_id %}"><i class="pli-mail icon-lg icon-fw"></i>Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'main-transactions' %}?receiver="><i class="pli-mail icon-lg icon-fw"></i>Make Transactions</a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="#" onclick="btnLogout('fog')"><i class="pli-unlock icon-lg icon-fw"></i> Logout</a>
+                                        <!-- <button class="btn btn-primary" onclick="btnLogout('dashboard')"><i class="pli-unlock icon-lg"></i></button> -->
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                        
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
+
+            </div>
+            {% endblock nav_fac %}
+        </header>
+
+{% block body %}
+{% endblock body %}
+
+
+<!-- FOOTER -->
+<!--===================================================-->
+<footer id="footer">
+
+    <!-- Visible when footer positions are fixed -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="show-fixed pad-rgt pull-right">
+        You have <a href="#" class="text-main"><span class="badge badge-danger">3</span> pending action.</a>
+    </div>
+
+
+
+    <!-- Visible when footer positions are static -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="hide-fixed pull-right pad-rgt">
+        
+    </div>
+
+
+
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <!-- Remove the class "show-fixed" and "hide-fixed" to make the content always appears. -->
+    <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+    <p class="pad-lft"></p>
+
+
+
+</footer>
+<!--===================================================-->
+<!-- END FOOTER -->
+
+
+<!-- SCROLL PAGE BUTTON -->
+<!--===================================================-->
+<button class="scroll-top btn">
+    <i class="pci-chevron chevron-up"></i>
+</button>
+<!--===================================================-->
+
+
+
+</div>
+<!--===================================================-->
+<!-- END OF CONTAINER -->
+
+
+
+
+
+<!--JAVASCRIPT-->
+<!--=================================================-->
+
+<!--jQuery [ REQUIRED ]-->
+<script src="{% static 'main/js/jquery.min.js' %}"></script>
+
+
+<!--BootstrapJS [ RECOMMENDED ]-->
+<script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+
+
+<!--NiftyJS [ RECOMMENDED ]-->
+<script src="{% static 'main/js/nifty.min.js' %}"></script>
+
+
+
+
+<!--=================================================-->
+
+<!--Demo script [ DEMONSTRATION ]-->
+<!-- <script src="{% static 'main/js/demo/nifty-demo.min.js' %}"></script> -->
+
+
+<!--Morris.js [ OPTIONAL ]-->
+<script src="{% static 'main/plugins/morris-js/morris.min.js' %}"></script>
+<script src="{% static 'main/plugins/morris-js/raphael-js/raphael.min.js' %}"></script>
+
+
+{% block add_js %}
+{% endblock add_js %}
+
+<!--Custom script [ DEMONSTRATION ]-->
+<!--===================================================-->
+<script>
+$(document).on('nifty.ready', function () {
+    
+        // MORRIS LINE CHART
+        // =================================================================
+        // Require MorrisJS Chart
+        // -----------------------------------------------------------------
+        // http://morrisjs.github.io/morris.js/
+        // =================================================================
+        var day_data = [
+            {'elapsed': '2000', 'value': 18},
+            {'elapsed': '2001', 'value': 24},
+            {'elapsed': '2002', 'value': 9},
+            {'elapsed': '2003', 'value': 12},
+            {'elapsed': '2004', 'value': 13},
+            {'elapsed': '2005', 'value': 22},
+            {'elapsed': '2006', 'value': 11},
+            {'elapsed': '2007', 'value': 26},
+            {'elapsed': '2008', 'value': 12},
+            {'elapsed': '2009', 'value': 19},
+            {'elapsed': '2000', 'value': 15},
+            {'elapsed': '2001', 'value': 24},
+            {'elapsed': '2002', 'value': 9},
+            {'elapsed': '2003', 'value': 12},
+            {'elapsed': '2004', 'value': 13},
+            {'elapsed': '2005', 'value': 22},
+            {'elapsed': '2006', 'value': 15},
+            {'elapsed': '2007', 'value': 26},
+            {'elapsed': '2008', 'value': 12},
+            {'elapsed': '2009', 'value': 19}
+        ];
+        Morris.Line({
+            element: 'morris-line',
+            data: day_data,
+            xkey: 'elapsed',
+            ykeys: ['value'],
+            labels: ['value'],
+            gridEnabled: true,
+            gridLineColor: 'rgba(0,0,0,.1)',
+            gridTextColor: '#8f9ea6',
+            gridTextSize: '11px',
+            lineColors: ['#177bbb'],
+            lineWidth: 2,
+            parseTime: false,
+            resize:true,
+            hideHover: 'auto'
+        });
+        
+});
+</script>
+
+<script>
+    function btnLogout(name) {
+      document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+      window.location.replace("/login/");
+    }
+</script>
+
+
+
+</body>
+</html>

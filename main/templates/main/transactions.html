@@ -1,0 +1,112 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block title %}<title>Transactions</title>{% endblock title%}
+{% block body %}
+
+    <div class="boxed">
+
+        <!--CONTENT CONTAINER-->
+        <!--===================================================-->
+        <div id="content-container">
+            
+
+            
+            <!--Page content-->
+            <!--===================================================-->
+            <div id="page-content">
+                <!-- <h2 class="text-center">Trasaction from {{userScanner}} to {{userReceiver}}</h2> -->
+			    <!-- <hr class="new-section-md bord-no"> -->
+
+			    {% if invalid_input %}                  
+                <div class="alert alert-danger">
+                    <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                    <strong>Oh snap!</strong> Please input amount in integer
+                </div>
+                {% endif %}
+                {% if invalid_user %}                  
+                <div class="alert alert-danger">
+                    <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                    <strong>Oh snap!</strong> Please input valid user
+                </div>
+                {% endif %}
+
+                {% for message in messages %}
+                    {% if 'transactions_insufficient' in message.extra_tags %}
+                    <div class="alert alert-danger">
+                        <button class="close" data-dismiss="alert"><i class="pci-cross pci-circle"></i></button>
+                        <strong >Fail!</strong> Insufficient balance
+                    </div>
+                    
+                    {% endif %}
+                {% endfor %}
+
+				<div class="row pad-all">
+					<div class="col-md-8">
+					    <div class="panel">
+					        <div class="panel-heading">
+					            <h3 class="panel-title">Transactions</h3>
+					        </div>
+
+					        <!--Data Table-->
+					        <!--===================================================-->
+					        <div class="panel-body">
+									<p><strong>Your current balance:</strong> RM {{userScanner_balance}}.00</p>
+						            <!--Horizontal Form-->
+						            <!--===================================================-->
+						            <form class="form-horizontal" method="POST">
+						                <div class="panel-body">
+						                    <div class="form-group ">
+						                        <label class="col-sm-3 control-label" for="hor-inputemail">To</label>
+						                        <div class="col-sm-9">
+						                            <input name="userReceiver" type="text" placeholder="{% if userReceiver == None %}Recipient Account{% else %}{{userReceiver}}{% endif %}" value="{% if userReceiver != None %}{{userReceiver}}{% endif %}"id="hor-inputemail" class="form-control">
+						                        </div>
+						                    </div>
+						                    <div class="form-group">
+						                        <label class="col-sm-3 control-label" for="hor-inputemail">From</label>
+						                        <div class="col-sm-9">
+						                            <input name="userScanner" type="text" placeholder="{{userScanner}}" value="{{userScanner}}" id="hor-inputemail" class="form-control">
+						                        </div>
+						                    </div>
+						                    <div class="form-group">
+						                        <label class="col-sm-3 control-label" for="hor-inputemail">Amount</label>
+						                        <div class="col-sm-9">
+						                            <input name="amount" type="text" placeholder="Amount"  id="hor-inputemail" class="form-control">
+						                        </div>
+						                    </div>
+				                            <div class="form-group">
+				                                <label class="control-label">Recipient Reference</label>
+				                                <input name="reference" type="text" class="form-control">
+				                            </div>
+						                    
+						                </div>
+						                <div class="panel-footer text-right">
+						                    <button class="btn btn-success" type="submit">Transfer Money</button>
+						                </div>
+						            </form>
+						            <!--===================================================-->
+						            <!--End Horizontal Form-->
+						
+					            <hr class="new-section-xs">
+					            
+					        </div>
+					        <!--===================================================-->
+					        <!--End Data Table-->
+
+					    </div>
+					</div>
+
+					<!-- <div class="col-md-4">
+						<div class="panel">
+							<div class="panel-heading">
+								<h3 class="panel-title">{{userScanner}} Account Information</h3>
+							</div>
+
+							<div class="panel-body">
+								
+							</div>
+						</div>
+					</div> -->
+
+				</div>
+			</div>
+{% endblock body %}
