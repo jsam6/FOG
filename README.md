@@ -45,3 +45,11 @@ This system highlights the importance of simplifying everything onto a mobile ap
 ### Inspiration comes from Google's Popular Times section
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/populartimes.PNG " alt="Inspiration">
+
+### Getting Started
+
+```shell
+
+python manage.py runserver 127.0.0.1:8000
+
+```
