@@ -36,12 +36,12 @@ This system highlights the importance of simplifying everything onto a mobile ap
 
 <u>Transaction Page</u>
 
-<img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/page-transaction.PNG " alt="Facility">
+<img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/page-transaction.PNG " alt="Transaction">
 
 <u>Admin Page</u>
 
-<img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/admin-graph.PNG " alt="Facility">
+<img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/admin-graph.PNG " alt="Admin">
 
 ### Inspiration comes from Google's Popular Times section
 
-<img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/populartimes.PNG " alt="Facility">
+<img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/populartimes.PNG " alt="Inspiration">
