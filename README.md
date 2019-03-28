@@ -18,27 +18,27 @@ This system highlights the importance of simplifying everything onto a mobile ap
 
 ### Images 
 
-<u>Process Flow of FOG</u>
+#### Process Flow of FOG
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/basic.PNG " alt="Flow">
 
-<u>Main Page on Mobile</u>
+#### Main Page on Mobile
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/page-user.PNG " alt="User">
 
-<u>Main Page on Desktop</u>
+#### Main Page on Desktop
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/user-accurate.PNG " alt="User">
 
-<u>Facility Page</u>
+### Facility Page
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/page-facility.PNG " alt="Facility">
 
-<u>Transaction Page</u>
+#### Transaction Page
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/page-transaction.PNG " alt="Transaction">
 
-<u>Admin Page</u>
+#### Admin Page
 
 <img align="center" src="https://raw.githubusercontent.com/jsam6/FOG/master/fog-image/admin-graph.PNG " alt="Admin">
 
